@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, num;
+    int sum = 0;
+    int max, min;
+
+    printf("Enter how many numbers you want to enter: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Invalid number of items.\n");
+        return 1;
+    }
+
+    printf("Enter number 1: ");
+    scanf("%d", &num);
+
+    sum = num;
+    max = num;
+    min = num;
+
+    for (i = 2; i <= n; i++) {
+        printf("Enter number %d: ", i);
+        scanf("%d", &num);
+
+        sum += num;
+
+        if (num > max)
+            max = num;
+        if (num < min)
+            min = num;
+    }
+
+    printf("\nResults:\n");
+    printf("Sum = %d\n", sum);
+    printf("Average = %.2f\n", (float)sum / n);
+    printf("Maximum = %d\n", max);
+    printf("Minimum = %d\n", min);
+
+    return 0;
+}
